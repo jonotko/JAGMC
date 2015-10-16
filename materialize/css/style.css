@@ -12,3 +12,29 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+.container {
+  
+}
+
+.bgColor {
+  background-color: #C7D0D5;
+}
+
+.loginBtn {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.displayPic {
+  width: 100px;
+  height: 100px;
+}
+
+.tdDisplayPic {
+  width: 100px;
+  padding: 10px
+}
