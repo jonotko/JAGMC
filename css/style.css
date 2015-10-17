@@ -87,3 +87,30 @@
     position: relative;
     left: -100%;
 }
+
+.top {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  background-color: #aaa;
+  height: 300px;
+  opacity: 1;
+  text-align: center;
+  font-family: 'helvetica';
+  font-size: 80px;
+  font-weight: 100;
+  color: #fff;
+}
+
+
+
+.headings {
+  background-color: #93B1C6;
+  padding: 10px;
+}
+
+.titles {
+  font-size: 20px;
+  font-family:;
+  font-weight: bold;
+}

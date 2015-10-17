@@ -1,28 +1,22 @@
 <html>
   <head>
     <script src="header.js" ></script>
-    <script>
-      $(document).ready(function (){
-        $('tag').click( function() {
-          $.post("http://localhost:8080/request", function(data, status) {
-            
-        });
-      });
+    <script src="helper.js"></script>
     
-    </script>
   </head>
   <body>
-    <nav>
-  <ul class="right hide-on-med-and-down">
-    <li><a href="#!">First Sidebar Link</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-  </ul>
-  <ul id="slide-out" class="side-nav">
-    <li><a href="#!">First Sidebar Link</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-</nav>
+   <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="logo.png" class="img-responsive logo"></a>
+      <ul class="right hide-on-med-and-down">
+          <!--<li><a href="signup.html"><h4>Register</h4></a></li>-->
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
     
     <div class="row">
 
@@ -45,7 +39,7 @@
             -->
              <div class="collection test1">
         <a href="#!" class="collection-item active">Profile</a>
-        <a href="#!" class="collection-item">Experience</a>
+        <a href="#!" onclick="test()" class="collection-item" id="staggered-test">Experience</a>
         <a href="#!" class="collection-item">Projects</a>
         <a href="#!" class="collection-item">Skills</a>
       </div>
@@ -59,15 +53,62 @@
 
       <div class="col s9">
         <!-- Teal page content  -->
-        <h1>Jonathan Agarrat</h1>
-          543-210-678<i class="medium material-icons">phone</i> 
-        <br />
-        johnDoe@gmail.com
-        <i class="medium material-icons">email</i>
-        <i class="medium material-icons">location_on</i><p>New York</p>
+        <h1 class="headings">Jonathan Agarrat</h1>
+        <div id="top">
+        <table height="480px" class="bordered">
+          <tr>
+            <td width="50px"><i class="medium material-icons">phone</i> </td>
+            <td>543-210-678</td>
+          
+          </tr>
+          <tr>
+            <td width="50px"><i class="medium material-icons">email</i></td>
+            <td>johnDoe@gmail.com</td>
+          
+          </tr>
+          <tr>
+            <td width="50px"><i class="medium material-icons">location_on</i></td>
+            <td> New York</td>
+          
+          </tr>
+        
+        
+        </table>
+        </div>
+        <div id="exp">
+        <h1 class="headings">Experience</h1>
+          <table>
+            <tr>
+              <td><p class="titles">Lehman Fall 2015 Hackathon</p></td>
+              <td>2015</td>
+            </tr>
+          </table>
+      <ul>
+        <li>Coded a RESTful server from scratch in Java.</li>
+        <li>Implemented a web app using JavaScript and Jquery</li>
+        <li>Won the judges vote :)</li>
+      </ul>
+    
+    </div>
+       
       </div>
 
     </div>
+    
+    
+    
+    <script>
+    
+      var options = [
+    {selector: '#staggered-test', offset: 50, callback: 'Materialize.toast("This is our ScrollFire Demo!", 1500 )' },
+    {selector: '#staggered-test', offset: 205, callback: 'Materialize.toast("Please continue scrolling!", 1500 )' },
+    {selector: '#staggered-test', offset: 400, callback: 'Materialize.showStaggeredList("#staggered-test")' },
+    {selector: '#image-test', offset: 500, callback: 'Materialize.fadeInImage("#image-test")' }
+  ];
+  Materialize.scrollFire(options);
+    </script>
+    
+    
     <!--
     <ul class="collapsible" data-collapsible="accordion">
     <li>
@@ -84,6 +125,7 @@
       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
   </ul>
+
 -->
     
     <script> $(document).ready(function(){

@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script>"use strict";</script>
+    <!--Import Google Icon Font-->
+    <script src="header.js"></script>
+   
+</head>
+
+<body class="bgColor">
+  
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="logo.png" class="img-responsive logo"></a>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="index.html"><h4>Home</h4></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  
+  <div class="scholarships">
+
+
+
+</div>
+
+  
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="hackathon.js"></script>
+  
+  <script>
+    
+    function addScholarship(title,description,minAge,maxAge,minGpa) {
+    var sc = '<div class="row">        <div class="col s12 m6">          <div class="card blue-grey darken-1">            <div class="card-content white-text">              <span class="card-title">'+title+'</span>              <p>'+description+'</p>            </div>            <div class="card-action">              Age: '+minAge+' to '+maxAge+' |        GPA Reuirement: Minimum '+(minGpa/10)+'    </div>          </div>        </div>      </div>';
+
+      $( ".scholarships" ).append( sc );
+};
+
+
+$(document).ready(function () {
+    $.post( "http://dlesoft.com:8080/get_scholarships", function( data ) {
+        var d = JSON.parse(data);
+        for (var i = 0; i < d.length; i++) {
+            addScholarship(d[i].name,d[i].description,d[i].minAge,d[i].maxAge,d[i].minGpa);
+        }
+        $( ".result" ).append( data );
+    });
+}
+);
+  </script>
+</body>
+</html>

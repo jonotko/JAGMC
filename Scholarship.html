@@ -1,98 +1,143 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="header.js"></script>
-    <script> "use strict";
-    </script>
-  </head>
-  
-  
-  <body>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="hackathon.js"></script>
-    
-    <div><a class="load-action waves-effect waves-light btn">Load</a>
-      <a class="save-action waves-effect waves-light btn">Save</a>
-      <a class="add-action waves-effect waves-light btn">Add</a>
-      <a class="get-scholarships-action waves-effect waves-light btn">Get Scholarships</a>
-            
-            
+<head>
+    <script>"use strict";</script>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="hackathon.js"></script>
+
+<p></p>Hey, this is a test of the Material Design thing!</p>
+
+<a class="waves-effect waves-light btn">Stuff</a>
+<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+
+<br /><br />
+<a class="load-action waves-effect waves-light btn">Load</a>
+<a class="save-action waves-effect waves-light btn">Save</a>
+<a class="add-action waves-effect waves-light btn">Add</a>
+<a class="get-scholarships-action waves-effect waves-light btn">Get Scholarships</a>
+
+<form id="new_user" class="col s12">
+    <div class="row">
+        <div class="input-field col s6">
+            <input placeholder="Enter Name" id="in_name" type="text" class="validate">
+            <label for="in_name">Name</label>
+        </div>
+
+        <div class="input-field col s6">
+            <input placeholder="Enter Lektronik Mail" id="in_email" type="email" class="validate">
+            <label for="in_email">Electronic Mail</label>
+        </div>
     </div>
-    <form id="new_user" class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Enter Name" id="in_name" type="text" class="validate">
-          <label for="in_name">Name</label>
+
+    <div class="row">
+        <div class="input-field col s3">
+            <input placeholder="99" id="in_age" type="text" class="validate">
+            <label for="in_age">Age</label>
         </div>
-        <div class="input-field col s6">
-          <input placeholder="Enter Email" id="in_email" type="text" class="validate">
-          <label for="in_name">Email</label>
+        <div class="input-field col s9">
+            <input type="checkbox" class="filled-in" id="in_male" checked="checked" />
+            <label for="in_male">Are you a male?</label>
         </div>
+    </div>
+
+    <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Enter Ethnicity" id="in_ethnicity" type="text" class="validate">
-          <label for="in_name">Ethnicity</label>
+            <input placeholder="Enter an Ethnicity" id="in_ethnicity" type="text" class="validate">
+            <label for="in_ethnicity">Ethnicity</label>
         </div>
+
         <div class="input-field col s6">
-          <input placeholder="Enter and Address" id="in_address" type="text" class="validate">
-          <label for="in_name">Address</label>
+            <input placeholder="Enter an Address" id="in_address" type="text" class="validate">
+            <label for="in_address">Address</label>
         </div>
-      
-      </div>
-    
-    </form>
-    
-    <div class="scholarships"></div>
-    
-    <script>
-      var user = makeUser("Moniques","moniues@hotmail.com",20,false,"black","200 West St.");
-      
-      $('.load-action').click(function () {
-        $.post("http://dlesoft.com:8080/load", function( data) {
-          $(".result").append(data);
-        });
-      });
-    
-      
-      $('.save-action').click(function () {
-        $.post("http://dlesoft.com:8080/save", function(data){
-          $(".result").append(data);
-        });
-      });
-      
-      
-      $('.add-action').click(function () {
-        var name = $("#in_name").val();
-        var email = $("#in_email").val();
-        var age = $("#in_age").val();
-        var isMale = $("#in_male").val();
-        var ethnicity = $("#in_ethnicity").val();
-        var address = $("#in_address").val();
-        
-        var newUser = makeUser(name,email,age,isMale,ethnicity, address);
-        
-        $(".result").append(JSON.stringify(newUser));
-        
-        $.post("http://dlesoft.com:8080/add", JSON.stringify(newUser), function (data) {
-          $(".result").append(data);
-      });
-      });// End of add action 
-      
-      function addScholarship(title, description,minAge,maxAge,minGpa) {
-        var sc = '<div class="row">  <div class="col s12 m6"> <div class="card blue-grey darken-1"> <div class="card-content white-text"> <span class="card-title">'+title+'</span> <p>'+description+'</p> </div> <div class="card-action"> Age: '+minAge+' to '+maxAge+' | GPA Requirement: Minimum '+(minGpa/10)+' </div> </div> </div> </div>';
-        
-        $(".scholarships").append(sc);
-      };
-      
-      $('.get-scholarships').click(function () {
-        $.post("http://dlesoft.com:8080/get_scholarships", function(data) {
-          var d = JSON.parse(data);
-          for( var i = 0; i<d.length; i++) {
-            addScholarship(d[i].name,d[i].description,d[i].minAge, maxAge, d[i].minGpa);
-          }
-          $(".result").append(data);
-        });
-      });
-    </script>
-    
-  </body>
+    </div>
+</form>
+
+
+<div class="scholarships">
+
+
+
+</div>
+
+
+<div class="result"></div>
+
+<script>
+
+var user = makeUser("Moniques","moniues@hotmail.com",20,false,"black","200 West St.");
+
+$('.load-action').click(function () {
+    $.post( "http://dlesoft.com:8080/load", function( data ) {
+        $( ".result" ).append( data );
+    });
+}
+);
+
+$('.save-action').click(function () {
+    $.post( "http://dlesoft.com:8080/save", function( data ) {
+        $( ".result" ).append( data );
+    });
+}
+);
+
+$('.add-action').click(function () {
+
+
+    var name = $("#in_name").val();
+    var email = $("#in_email").val();
+    var age = $("#in_age").val();
+    var isMale = $("#in_male").val();
+    var ethnicity = $("#in_ethnicity").val();
+    var address = $("#in_address").val();
+
+    var newUser = makeUser(name,email,age,isMale,ethnicity,address);
+
+    $( ".result" ).append( JSON.stringify(newUser) );
+
+    $.post( "http://dlesoft.com:8080/add", JSON.stringify(newUser), function( data ) {
+        $( ".result" ).append( data );
+    });
+}
+);
+
+
+function addScholarship(title,description,minAge,maxAge,minGpa) {
+    var sc = '<div class="row">        <div class="col s12 m6">          <div class="card blue-grey darken-1">            <div class="card-content white-text">              <span class="card-title">'+title+'</span>              <p>'+description+'</p>            </div>            <div class="card-action">              Age: '+minAge+' to '+maxAge+' |        GPA Reuirement: Minimum '+(minGpa/10)+'    </div>          </div>        </div>      </div>';
+
+      $( ".scholarships" ).append( sc );
+};
+
+
+$('.get-scholarships-action').click(function () {
+    $.post( "http://dlesoft.com:8080/get_scholarships", function( data ) {
+        var d = JSON.parse(data);
+        for (var i = 0; i < d.length; i++) {
+            addScholarship(d[i].name,d[i].description,d[i].minAge,d[i].maxAge,d[i].minGpa);
+        }
+        $( ".result" ).append( data );
+    });
+}
+);
+
+
+
+
+
+</script>
+
+</body>
 </html>
