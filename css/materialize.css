@@ -112,7 +112,7 @@
   color: #D32F2F !important; }
 
 .red.darken-3 {
-  background-color: #C62828 !important; }
+  background-color: #C72800 !important; }
 
 .red-text.text-darken-3 {
   color: #C62828 !important; }
@@ -2176,7 +2176,7 @@ ul.staggered-list li {
 
 footer.page-footer {
   margin-top: 20px;
-  padding-top: 20px;
+  padding-top: 15px;
   background-color: #93B1C6; }
   footer.page-footer .footer-copyright {
     overflow: hidden;
@@ -2531,7 +2531,8 @@ nav ul a span.badge {
   text-align: right; }
 
 .center, .center-align {
-  text-align: center; }
+  text-align: left}
+
 
 .left {
   float: left !important; }
@@ -5035,7 +5036,9 @@ nav ul a span.badge {
 .container {
   margin: 0 auto;
   max-width: 1280px;
-  width: 90%; }
+  width: 90%;
+
+}
 
 @media only screen and (min-width : 601px) {
   .container {
@@ -5047,7 +5050,9 @@ nav ul a span.badge {
 
 .container .row {
   margin-left: -0.75rem;
-  margin-right: -0.75rem; }
+  margin-right: -0.75rem;
+    text-align: left;
+}
 
 .section {
   padding-top: 1rem;
@@ -5833,7 +5838,7 @@ small {
   transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
-    background-color: #2bbbad; }
+    background-color: #93B1C6; }
 
 .btn-floating {
   display: inline-block;
@@ -8196,3 +8201,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em; } }
+
+.newCenter {
+      text-align: auto}
+}
