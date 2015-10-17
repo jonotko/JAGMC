@@ -40,25 +40,42 @@
 }
 
 
-
-.test {
-  margin-bottom: 0px;
+.stickLeft {
+    margin: 0;
+    margin-right: 0;
+    padding-left: 10px;
 }
-
-.test1 {
-  width: 100%;
-  margin-top: 0px;
-  margin-bottom: 0px;
 
 
 }
 
+.newClass {
+      text-align: auto }
+    
+}
 
+.center2 {
+    text-align: center;
+}
 
+.center2 {
+    align-content: center
+}
 
+.align-center {
+    text-align: center;
+    
+}
 
+.userRec {
+    display: block;
+    width: 200px; !important
+    height: 200px;!important
+}
 
-
-
+.test2 {
+    width: 100px;
+    height: 200px;
+}
 
 
