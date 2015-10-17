@@ -1,6 +1,15 @@
 <html>
   <head>
     <script src="header.js" ></script>
+    <script>
+      $(document).ready(function (){
+        $('tag').click( function() {
+          $.post("http://localhost:8080/request", function(data, status) {
+            
+        });
+      });
+    
+    </script>
   </head>
   <body>
     <nav>
@@ -51,6 +60,11 @@
       <div class="col s9">
         <!-- Teal page content  -->
         <h1>Jonathan Agarrat</h1>
+          543-210-678<i class="medium material-icons">phone</i> 
+        <br />
+        johnDoe@gmail.com
+        <i class="medium material-icons">email</i>
+        <i class="medium material-icons">location_on</i><p>New York</p>
       </div>
 
     </div>
