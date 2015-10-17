@@ -5838,7 +5838,11 @@ small {
   transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
+<<<<<<< HEAD
     background-color: #93B1C6; }
+=======
+    background-color: hotpink; }
+>>>>>>> origin/master
 
 .btn-floating {
   display: inline-block;
