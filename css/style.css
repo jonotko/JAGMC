@@ -79,3 +79,11 @@
 }
 
 
+
+.logo {
+    height:60px;
+    width:150px;
+    display: block;
+    position: relative;
+    left: -100%;
+}
