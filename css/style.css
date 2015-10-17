@@ -39,15 +39,14 @@
   padding: 10px
 }
 
-<<<<<<< HEAD
+
 .stickLeft {
     margin: 0;
     margin-right: 0;
     padding-left: 10px;
 }
 
-.yu {
-    
+
 }
 
 .newClass {
@@ -68,7 +67,7 @@
     
 }
 
-.test1 {
+.userRec {
     display: block;
     width: 200px; !important
     height: 200px;!important
@@ -78,22 +77,5 @@
     width: 100px;
     height: 200px;
 }
-=======
 
 
-.test {
-  margin-bottom: 0px;
-}
-
-.test1 {
-  width: 100%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-
-
-}
-
-
-
-
->>>>>>> origin/master
