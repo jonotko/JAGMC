@@ -1,0 +1,40 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+.container {
+  
+}
+
+.bgColor {
+  background-color: #C7D0D5;
+}
+
+.loginBtn {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.displayPic {
+  width: 100px;
+  height: 100px;
+}
+
+.tdDisplayPic {
+  width: 100px;
+  padding: 10px
+}
